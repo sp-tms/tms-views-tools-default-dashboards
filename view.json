@@ -1,0 +1,77 @@
+{
+	"name" : "Dashboards",
+	"display_name" : "TMS Dashboards View",
+	"description" : "<p>TMS Dashboards View<br></p>",
+	"module_type" : "views",
+	"app_type" : "tms",
+	"category" : "tools",
+	"version" : "0.0.0",
+	"repo" : "https://github.com/sp-tms/tms-views-tools-default-dashboards",
+	"dependencies" : 
+	{
+		"core" : 
+		{
+			"name" : "Core",
+			"version" : "0.0.0-rc.15",
+			"repo" : "https://github.com/sp-framework/core"
+		},
+		"apptype" : 
+		{
+			"name" : "Transport Management System",
+			"version" : "0.0.0",
+			"repo" : "https://github.com/sp-tms/tms"
+		},
+		"packages" : [],
+		"views" : 
+		[
+			{
+				"name" : "Default",
+				"version" : "0.0.0",
+				"repo" : "https://github.com/sp-tms/tms-views-tools-default"
+			}
+		]
+	},
+	"is_subview" : true,
+	"settings" : 
+	{
+		"head" : 
+		{
+			"link" : 
+			{
+				"href" : 
+				{
+					"assets" : 
+					{
+						"dev" : [],
+						"prod" : []
+					}
+				}
+			},
+			"script" : 
+			{
+				"src" : 
+				{
+					"assets" : 
+					{
+						"dev" : [],
+						"prod" : []
+					}
+				}
+			}
+		},
+		"footer" : 
+		{
+			"script" : 
+			{
+				"src" : 
+				{
+					"assets" : 
+					{
+						"dev" : [],
+						"prod" : []
+					}
+				}
+			}
+		}
+	}
+}
