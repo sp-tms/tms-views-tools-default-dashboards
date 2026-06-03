@@ -1,0 +1,43 @@
+{% if dashboard['id'] is defined %}
+    {% set dashboardId = dashboard['id'] %}
+    {% set title = 'Dashboard (' ~ dashboard['name'] ~ ')' %}
+{% else %}
+    {% set dashboardId = '' %}
+    {% set title = 'New Dashboard' %}
+{% endif %}
+{% set formButtons =
+    [
+        'updateButtonId'                : dashboardId,
+        'addActionUrl'                  : 'dashboards/add',
+        'addSuccessRedirectUrl'         : 'dashboards',
+        'updateActionUrl'               : 'dashboards/update',
+        'updateSuccessRedirectUrl'      : 'dashboards',
+        'cancelActionUrl'               : 'dashboards',
+        'closeActionUrl'                : 'dashboards'
+    ]
+%}
+{% if dashboard['app_default'] is defined and dashboard['app_default'] == true %}
+{% set formButtons =
+    [
+        'closeActionUrl'                : 'dashboards'
+    ]
+%}
+{% endif %}
+{{adminltetags.useTag('content',
+    [
+        'component'                     : component,
+        'componentName'                 : componentName,
+        'componentId'                   : componentId,
+        'parentComponentId'             : parent,
+        'sectionId'                     : 'main',
+        'contentType'                   : 'sectionWithForm',
+        'cardHeader'                    : true,
+        'cardFooter'                    : true,
+        'cardType'                      : 'primary',
+        'cardIcon'                      : 'dashboard',
+        'cardTitle'                     : title,
+        'cardAdditionalClass'           : 'rounded-0',
+        'cardBodyInclude'               : 'dashboards/dashboards/form',
+        'formButtons'                   : formButtons
+    ]
+)}}
